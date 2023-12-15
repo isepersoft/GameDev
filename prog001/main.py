@@ -1,21 +1,21 @@
+# main.py
 import pygame
-import sys
+from splash_screen import SplashScreen
+from menu_screen import MenuScreen
 
-# Инициализация Pygame
-pygame.init()
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
 
-# Создание окна
-width, height = 800, 600
-screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption("Моя Первая Игра")
+    # Заставка
+    splash = SplashScreen(screen)
+    splash.run()
 
-# Основной цикл
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    # Меню
+    menu = MenuScreen(screen)
+    menu.run()
 
-    # Здесь добавь код для отрисовки и обработки событий
+    pygame.quit()
 
-    pygame.display.flip()
+if __name__ == "__main__":
+    main()

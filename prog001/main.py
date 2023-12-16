@@ -1,5 +1,6 @@
 # main.py
 import pygame
+from Game2048 import Game2048
 from splash_screen import SplashScreen
 from menu_screen import MenuScreen
 
